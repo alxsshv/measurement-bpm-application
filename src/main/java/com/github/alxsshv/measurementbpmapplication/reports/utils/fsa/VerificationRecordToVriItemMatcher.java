@@ -1,9 +1,9 @@
 package com.github.alxsshv.measurementbpmapplication.reports.utils.fsa;
 
+import com.github.alxsshv.arshin_client_starter.dto.vri.VriItem;
 import com.github.alxsshv.measurementbpmapplication.reports.entity.fsa.FsaVerificationRecord;
 import com.github.alxsshv.measurementbpmapplication.reports.exception.ArshinResponseException;
 import com.github.alxsshv.measurementbpmapplication.reports.utils.DateStringConverter;
-import com.github.alxsshv.measurementbpmapplication.arshinclient.dto.vri.VriItem;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;

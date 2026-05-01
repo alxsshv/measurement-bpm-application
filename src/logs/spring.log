@@ -1,19 +1,136 @@
-2026-03-23T17:01:08.175+03:00  INFO 22752 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 22752 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:01:08.193+03:00  INFO 22752 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:01:11.187+03:00  INFO 22752 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:01:11.211+03:00  INFO 22752 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:01:11.212+03:00  INFO 22752 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:01:11.308+03:00  INFO 22752 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:01:11.309+03:00  INFO 22752 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2875 ms
-2026-03-23T17:01:11.982+03:00  WARN 22752 --- [measurement-bpm-application] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fsaReportTaskScheduler' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reportscheduler/service/FsaReportTaskScheduler.class]: Encountered invalid @Scheduled method 'deleteOverdueTasks': Invalid time zone specification 'Europa/Moscow'
-2026-03-23T17:01:11.989+03:00  INFO 22752 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-03-23T17:01:12.024+03:00  INFO 22752 --- [measurement-bpm-application] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-05-01T16:29:35.814+03:00  INFO 1445732 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1445732 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T16:29:35.887+03:00  INFO 1445732 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T16:29:38.959+03:00  INFO 1445732 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T16:29:38.985+03:00  INFO 1445732 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T16:29:38.987+03:00  INFO 1445732 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T16:29:39.099+03:00  INFO 1445732 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T16:29:39.101+03:00  INFO 1445732 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2997 ms
+2026-05-01T16:29:40.101+03:00  INFO 1445732 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-05-01T16:29:41.057+03:00  INFO 1445732 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2026-05-01T16:29:41.123+03:00  INFO 1445732 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 7.849 seconds (process running for 9.088)
+2026-05-01T16:29:41.167+03:00  INFO 1445732 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
+2026-05-01T16:29:41.170+03:00  INFO 1445732 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
+2026-05-01T16:29:41.167+03:00  INFO 1445732 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
+2026-05-01T16:29:41.190+03:00  INFO 1445732 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/tmp/d3d70e46-2b18-4cf5-8c6f-3632d1592b04_2026-03-23T21:04:34.750885091.tmp ] успешно удален
+2026-05-01T16:29:41.191+03:00  INFO 1445732 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReport442c9451-96a2-4629-a254-e4af9aad2e32.xml ] успешно удален
+2026-05-01T16:29:41.213+03:00  INFO 1445732 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReport1b3b01a1-bff5-46e0-84db-a5b771e5c978.xml ] успешно удален
+2026-05-01T16:29:41.637+03:00  INFO 1445732 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Запущено выполнение задачи [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] в потоке task-4
+2026-05-01T16:29:41.639+03:00  INFO 1445732 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Срок выполнения задачи [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] истек. Она помечена на удаление
+2026-05-01T16:29:41.689+03:00  INFO 1445732 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Задача [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] не выполняется т.к. не истек интервал между попытками
+2026-05-01T16:31:41.639+03:00  INFO 1445732 --- [measurement-bpm-application] [task-5] c.g.a.m.r.service.FsaReportTaskExecutor  : Запущено выполнение задачи [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] в потоке task-5
+2026-05-01T16:31:41.640+03:00  INFO 1445732 --- [measurement-bpm-application] [task-5] c.g.a.m.r.service.FsaReportTaskExecutor  : Задача [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] уже выполнена
+2026-05-01T16:33:41.645+03:00  INFO 1445732 --- [measurement-bpm-application] [task-6] c.g.a.m.r.service.FsaReportTaskExecutor  : Запущено выполнение задачи [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] в потоке task-6
+2026-05-01T16:33:41.647+03:00  INFO 1445732 --- [measurement-bpm-application] [task-6] c.g.a.m.r.service.FsaReportTaskExecutor  : Задача [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] уже выполнена
+2026-05-01T16:33:47.277+03:00  INFO 1445732 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T16:33:47.287+03:00  INFO 1445732 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-01T17:34:43.562+03:00  INFO 1461939 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1461939 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:34:43.569+03:00  INFO 1461939 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:34:46.444+03:00  INFO 1461939 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:34:46.477+03:00  INFO 1461939 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:34:46.479+03:00  INFO 1461939 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:34:46.569+03:00  INFO 1461939 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:34:46.570+03:00  INFO 1461939 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2781 ms
+2026-05-01T17:34:47.079+03:00  INFO 1461939 --- [measurement-bpm-application] [main] c.g.a.a.config.ArshinClientProperties    : ArshinClientStarter: Значение задержки между запросами не задано или задано неверно и будет установлено по умолчанию 5000 мс
+2026-05-01T17:34:47.089+03:00  WARN 1461939 --- [measurement-bpm-application] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'vriService' parameter 1: Error creating bean with name 'arshin.client.organization-com.github.alxsshv.arshin_client_starter.config.ArshinClientOrganizationProperties': Could not bind properties to 'ArshinClientOrganizationProperties' : prefix=arshin.client.organization, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-05-01T17:34:47.096+03:00  INFO 1461939 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-01T17:34:47.128+03:00  INFO 1461939 --- [measurement-bpm-application] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-03-23T17:01:12.059+03:00 ERROR 22752 --- [measurement-bpm-application] [main] o.s.boot.SpringApplication               : Application run failed
+2026-05-01T17:34:47.164+03:00 ERROR 1461939 --- [measurement-bpm-application] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fsaReportTaskScheduler' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reportscheduler/service/FsaReportTaskScheduler.class]: Encountered invalid @Scheduled method 'deleteOverdueTasks': Invalid time zone specification 'Europa/Moscow'
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:614) ~[spring-beans-6.2.16.jar:6.2.16]
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'arshin.client.organization' to com.github.alxsshv.arshin_client_starter.config.ArshinClientOrganizationProperties:
+
+    Reason: com.github.alxsshv.arshin_client_starter.exception.ArshinClientConfigurationException: В файле свойств не сконфигурированы данные организации: sign и title
+
+Action:
+
+Update your application's configuration
+
+2026-05-01T17:37:17.255+03:00  INFO 1462205 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1462205 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:37:17.261+03:00  INFO 1462205 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:37:20.005+03:00  INFO 1462205 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:37:20.039+03:00  INFO 1462205 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:37:20.040+03:00  INFO 1462205 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:37:20.143+03:00  INFO 1462205 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:37:20.145+03:00  INFO 1462205 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2714 ms
+2026-05-01T17:37:20.753+03:00  INFO 1462205 --- [measurement-bpm-application] [main] c.g.a.a.config.ArshinClientProperties    : ArshinClientStarter: Значение задержки между запросами не задано или задано неверно и будет установлено по умолчанию 5000 мс
+2026-05-01T17:37:20.761+03:00  WARN 1462205 --- [measurement-bpm-application] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'vriService' parameter 1: Error creating bean with name 'arshin.client.organization-com.github.alxsshv.arshin_client_starter.config.ArshinClientOrganizationProperties': Could not bind properties to 'ArshinClientOrganizationProperties' : prefix=arshin.client.organization, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-05-01T17:37:20.767+03:00  INFO 1462205 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-01T17:37:20.796+03:00  INFO 1462205 --- [measurement-bpm-application] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-01T17:37:20.826+03:00 ERROR 1462205 --- [measurement-bpm-application] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'arshin.client.organization' to com.github.alxsshv.arshin_client_starter.config.ArshinClientOrganizationProperties:
+
+    Reason: com.github.alxsshv.arshin_client_starter.exception.ArshinClientConfigurationException: В файле свойств не сконфигурированы данные организации: sign и title
+
+Action:
+
+Update your application's configuration
+
+2026-05-01T17:38:23.679+03:00  INFO 1462375 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1462375 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:38:23.685+03:00  INFO 1462375 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:38:26.262+03:00  INFO 1462375 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:38:26.288+03:00  INFO 1462375 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:38:26.289+03:00  INFO 1462375 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:38:26.392+03:00  INFO 1462375 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:38:26.394+03:00  INFO 1462375 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2552 ms
+2026-05-01T17:38:26.988+03:00  INFO 1462375 --- [measurement-bpm-application] [main] c.g.a.a.config.ArshinClientProperties    : ArshinClientStarter: Значение задержки между запросами не задано или задано неверно и будет установлено по умолчанию 5000 мс
+2026-05-01T17:38:26.995+03:00  WARN 1462375 --- [measurement-bpm-application] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'vriService' parameter 1: Error creating bean with name 'arshin.client.organization-com.github.alxsshv.arshin_client_starter.config.ArshinClientOrganizationProperties': Could not bind properties to 'ArshinClientOrganizationProperties' : prefix=arshin.client.organization, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-05-01T17:38:27.001+03:00  INFO 1462375 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-01T17:38:27.024+03:00  INFO 1462375 --- [measurement-bpm-application] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-01T17:38:27.055+03:00 ERROR 1462375 --- [measurement-bpm-application] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'arshin.client.organization' to com.github.alxsshv.arshin_client_starter.config.ArshinClientOrganizationProperties:
+
+    Reason: com.github.alxsshv.arshin_client_starter.exception.ArshinClientConfigurationException: В файле свойств не сконфигурированы данные организации: sign и title
+
+Action:
+
+Update your application's configuration
+
+2026-05-01T17:49:18.521+03:00  INFO 1463799 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1463799 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:49:18.533+03:00  INFO 1463799 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:49:21.925+03:00  INFO 1463799 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:49:21.951+03:00  INFO 1463799 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:49:21.953+03:00  INFO 1463799 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:49:22.045+03:00  INFO 1463799 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:49:22.046+03:00  INFO 1463799 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3316 ms
+2026-05-01T17:49:22.669+03:00  INFO 1463799 --- [measurement-bpm-application] [main] c.g.a.a.config.ArshinClientProperties    : ArshinClientStarter: Значение задержки между запросами не задано или задано неверно и будет установлено по умолчанию 5000 мс
+2026-05-01T17:49:22.684+03:00  WARN 1463799 --- [measurement-bpm-application] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+2026-05-01T17:49:22.691+03:00  INFO 1463799 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-01T17:49:22.726+03:00  INFO 1463799 --- [measurement-bpm-application] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-01T17:49:22.764+03:00 ERROR 1463799 --- [measurement-bpm-application] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
@@ -31,629 +148,257 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.11.jar:3.5.11]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.11.jar:3.5.11]
 	at com.github.alxsshv.measurementbpmapplication.MeasurementBpmApplication.main(MeasurementBpmApplication.java:14) ~[main/:na]
-Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'deleteOverdueTasks': Invalid time zone specification 'Europa/Moscow'
-	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduledTask(ScheduledAnnotationBeanPostProcessor.java:525) ~[spring-context-6.2.16.jar:6.2.16]
-	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduledSync(ScheduledAnnotationBeanPostProcessor.java:364) ~[spring-context-6.2.16.jar:6.2.16]
-	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:343) ~[spring-context-6.2.16.jar:6.2.16]
-	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$1(ScheduledAnnotationBeanPostProcessor.java:308) ~[spring-context-6.2.16.jar:6.2.16]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:308) ~[spring-context-6.2.16.jar:6.2.16]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
-	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:307) ~[spring-context-6.2.16.jar:6.2.16]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:445) ~[spring-beans-6.2.16.jar:6.2.16]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1829) ~[spring-beans-6.2.16.jar:6.2.16]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 48 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:429) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818) ~[spring-beans-6.2.16.jar:6.2.16]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.16.jar:6.2.16]
-	... 17 common frames omitted
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 61 common frames omitted
+Caused by: com.github.alxsshv.arshin_client_starter.exception.ArshinClientConfigurationException: Не указан  шифр организации в файле конфигурации. Пример заполнения файла свойств: + 
+client:
+  arshin:
+    params:
+      # Задержка между выполнением запросов к API ФГИС Аршин
+      between-requests-delay-ms : 5000
+    organization:
+        # Шифр организации-поверителя
+        sign: АИО
+        # Название организации поверителя как в разделе поверка ФГИС Аршин
+        title: АО "РОГА И КОПЫТЫ"
+    uri:
+      # URL по которому обращаемся в ФГИС Аршин для получения сведения о поверке
+      vri: "https://fgis.gost.ru/fundmetrology/eapi/vri?"
 
-2026-03-23T17:03:28.041+03:00  INFO 22977 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 22977 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:03:28.050+03:00  INFO 22977 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:03:30.827+03:00  INFO 22977 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:03:30.858+03:00  INFO 22977 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:03:30.859+03:00  INFO 22977 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:03:30.968+03:00  INFO 22977 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:03:30.969+03:00  INFO 22977 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2784 ms
-2026-03-23T17:03:31.723+03:00  INFO 22977 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:03:32.375+03:00  INFO 22977 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:03:32.423+03:00  INFO 22977 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.663 seconds (process running for 7.02)
-2026-03-23T17:03:32.444+03:00  INFO 22977 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:03:32.446+03:00  INFO 22977 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:03:32.447+03:00  INFO 22977 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:04:32.449+03:00  INFO 22977 --- [measurement-bpm-application] [task-4] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:05:32.450+03:00  INFO 22977 --- [measurement-bpm-application] [task-5] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:05:32.450+03:00  INFO 22977 --- [measurement-bpm-application] [task-6] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:06:32.450+03:00  INFO 22977 --- [measurement-bpm-application] [task-7] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:07:16.450+03:00  INFO 22977 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:07:16.459+03:00  INFO 22977 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:08:16.729+03:00  INFO 23272 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 23272 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:08:16.740+03:00  INFO 23272 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:08:19.464+03:00  INFO 23272 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:08:19.497+03:00  INFO 23272 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:08:19.498+03:00  INFO 23272 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:08:19.617+03:00  INFO 23272 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:08:19.618+03:00  INFO 23272 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2726 ms
-2026-03-23T17:08:20.431+03:00  INFO 23272 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:08:21.079+03:00  INFO 23272 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:08:21.118+03:00  INFO 23272 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.688 seconds (process running for 6.858)
-2026-03-23T17:08:21.133+03:00  INFO 23272 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:08:21.136+03:00  INFO 23272 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:08:21.137+03:00  INFO 23272 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:09:21.138+03:00  INFO 23272 --- [measurement-bpm-application] [task-4] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:09:35.794+03:00  INFO 23272 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:09:35.805+03:00  INFO 23272 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:09:49.898+03:00  INFO 23477 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 23477 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:09:49.909+03:00  INFO 23477 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:09:52.601+03:00  INFO 23477 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:09:52.628+03:00  INFO 23477 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:09:52.629+03:00  INFO 23477 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:09:52.709+03:00  INFO 23477 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:09:52.710+03:00  INFO 23477 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2544 ms
-2026-03-23T17:09:53.490+03:00  INFO 23477 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:09:54.115+03:00  INFO 23477 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:09:54.148+03:00  INFO 23477 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 6.011 seconds (process running for 7.087)
-2026-03-23T17:09:54.165+03:00  INFO 23477 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:09:54.164+03:00  INFO 23477 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:09:54.164+03:00  INFO 23477 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:10:36.573+03:00  INFO 23477 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:10:36.593+03:00  INFO 23477 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:10:53.228+03:00  INFO 23669 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 23669 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:10:53.236+03:00  INFO 23669 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:10:56.489+03:00  INFO 23669 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:10:56.532+03:00  INFO 23669 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:10:56.534+03:00  INFO 23669 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:10:56.722+03:00  INFO 23669 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:10:56.728+03:00  INFO 23669 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3327 ms
-2026-03-23T17:10:58.377+03:00  INFO 23669 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:10:59.230+03:00  INFO 23669 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:10:59.269+03:00  INFO 23669 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 7.359 seconds (process running for 8.988)
-2026-03-23T17:10:59.283+03:00  INFO 23669 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:10:59.282+03:00  INFO 23669 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:10:59.285+03:00  INFO 23669 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:11:36.661+03:00  INFO 23669 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:11:36.672+03:00  INFO 23669 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:13:21.968+03:00  INFO 23948 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 23948 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:13:21.974+03:00  INFO 23948 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:13:25.024+03:00  INFO 23948 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:13:25.061+03:00  INFO 23948 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:13:25.064+03:00  INFO 23948 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:13:25.193+03:00  INFO 23948 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:13:25.195+03:00  INFO 23948 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3042 ms
-2026-03-23T17:13:26.032+03:00  INFO 23948 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:13:26.594+03:00  INFO 23948 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:13:26.628+03:00  INFO 23948 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 6.039 seconds (process running for 7.1)
-2026-03-23T17:13:26.640+03:00  INFO 23948 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:13:26.639+03:00  INFO 23948 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:13:26.641+03:00  INFO 23948 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:13:48.660+03:00  INFO 23948 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:13:48.670+03:00  INFO 23948 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:14:04.484+03:00  INFO 24105 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 24105 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:14:04.491+03:00  INFO 24105 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:14:07.209+03:00  INFO 24105 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:14:07.242+03:00  INFO 24105 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:14:07.244+03:00  INFO 24105 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:14:07.353+03:00  INFO 24105 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:14:07.354+03:00  INFO 24105 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2668 ms
-2026-03-23T17:14:08.204+03:00  INFO 24105 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:14:08.907+03:00  INFO 24105 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:14:08.943+03:00  INFO 24105 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.717 seconds (process running for 6.722)
-2026-03-23T17:14:08.958+03:00  INFO 24105 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:14:08.960+03:00  INFO 24105 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:14:08.962+03:00  INFO 24105 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:14:14.745+03:00  INFO 24105 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:14:14.753+03:00  INFO 24105 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:15:49.731+03:00  INFO 24311 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 24311 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:15:49.746+03:00  INFO 24311 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:15:52.345+03:00  INFO 24311 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:15:52.369+03:00  INFO 24311 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:15:52.370+03:00  INFO 24311 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:15:52.463+03:00  INFO 24311 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:15:52.465+03:00  INFO 24311 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2564 ms
-2026-03-23T17:15:53.235+03:00  INFO 24311 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:15:53.877+03:00  INFO 24311 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:15:53.914+03:00  INFO 24311 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.419 seconds (process running for 6.514)
-2026-03-23T17:15:53.926+03:00  INFO 24311 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:15:53.927+03:00  INFO 24311 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:15:53.926+03:00  INFO 24311 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:15:58.929+03:00  INFO 24311 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:15:58.937+03:00  INFO 24311 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:24:08.588+03:00  INFO 24946 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 24946 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:24:08.601+03:00  INFO 24946 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:24:11.358+03:00  INFO 24946 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:24:11.383+03:00  INFO 24946 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:24:11.383+03:00  INFO 24946 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:24:11.484+03:00  INFO 24946 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:24:11.485+03:00  INFO 24946 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2686 ms
-2026-03-23T17:24:12.305+03:00  INFO 24946 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:24:12.858+03:00  INFO 24946 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:24:12.890+03:00  INFO 24946 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.58 seconds (process running for 6.856)
-2026-03-23T17:24:12.906+03:00  INFO 24946 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:24:12.908+03:00  INFO 24946 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:24:12.909+03:00  INFO 24946 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:24:12.922+03:00  INFO 24946 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/tmp/42930d51-a0d8-4c74-8a22-01e557007b34_2026-03-22T15:40:45.994324091.tmp ] успешно удален
-2026-03-23T17:24:12.925+03:00  INFO 24946 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/tmp/e337f9d3-d503-4806-a725-6018fe8810ce_2026-03-22T16:58:47.617479724.tmp ] успешно удален
-2026-03-23T17:24:33.016+03:00  INFO 24946 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:24:33.024+03:00  INFO 24946 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T17:25:22.192+03:00  INFO 25156 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 25156 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T17:25:22.203+03:00  INFO 25156 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T17:25:25.077+03:00  INFO 25156 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T17:25:25.113+03:00  INFO 25156 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T17:25:25.114+03:00  INFO 25156 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T17:25:25.230+03:00  INFO 25156 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T17:25:25.231+03:00  INFO 25156 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2847 ms
-2026-03-23T17:25:26.030+03:00  INFO 25156 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T17:25:26.581+03:00  INFO 25156 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T17:25:26.613+03:00  INFO 25156 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.674 seconds (process running for 6.539)
-2026-03-23T17:25:26.626+03:00  INFO 25156 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T17:25:26.627+03:00  INFO 25156 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T17:25:26.628+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T17:25:26.633+03:00  INFO 25156 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/FsaReports/FsaReportf1aea446-878e-47ad-8a1f-a25dd66a4159.xml ] успешно удален
-2026-03-23T17:25:26.635+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReportfce80685-99bd-42a2-92ba-78af37556c30.xml ] успешно удален
-2026-03-23T17:25:26.639+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReport12c47642-2173-4d02-9f60-57d81beca419.xml ] успешно удален
-2026-03-23T17:25:26.638+03:00  INFO 25156 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/FsaReports/FsaReportf246f49c-dfbd-4612-8927-f2095ae12298.xml ] успешно удален
-2026-03-23T17:25:26.641+03:00  INFO 25156 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/FsaReports/FsaReport1932c3bc-4cf5-46f0-82cf-ead68ff0c1d4.xml ] успешно удален
-2026-03-23T17:25:26.642+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReport930a267e-afcf-4115-9c19-d56041aadeec.xml ] успешно удален
-2026-03-23T17:25:26.643+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReportaf407fe4-fc59-47ad-97c0-133a457ebd49.xml ] успешно удален
-2026-03-23T17:25:26.645+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReport2136ef0c-0e84-456c-86b4-0a5cbe233a12.xml ] успешно удален
-2026-03-23T17:25:26.646+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReportb8748644-5cb9-4e6f-800e-699acdb94fe5.xml ] успешно удален
-2026-03-23T17:25:26.647+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReportccba4efd-8865-45f0-b74f-9b6785c94b29.xml ] успешно удален
-2026-03-23T17:25:26.648+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReport49bcbed9-d0a7-48c2-b494-cf242747022c.xml ] успешно удален
-2026-03-23T17:25:26.650+03:00  INFO 25156 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Очистка файлового хранилища. Файл [ /home/aleksei/TMP/ArshinReports/ArshinReporta0e84447-c8c3-4eb1-bb4a-82a296115d8e.xml ] успешно удален
-2026-03-23T17:25:52.496+03:00  INFO 25156 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T17:25:52.505+03:00  INFO 25156 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T18:31:50.888+03:00  INFO 29331 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 29331 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T18:31:50.897+03:00  INFO 29331 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T18:31:54.271+03:00  INFO 29331 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T18:31:54.304+03:00  INFO 29331 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T18:31:54.305+03:00  INFO 29331 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T18:31:54.434+03:00  INFO 29331 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T18:31:54.435+03:00  INFO 29331 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3378 ms
-2026-03-23T18:31:55.430+03:00  INFO 29331 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T18:31:56.117+03:00  INFO 29331 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T18:31:56.172+03:00  INFO 29331 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 6.638 seconds (process running for 7.837)
-2026-03-23T18:31:56.197+03:00  INFO 29331 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T18:31:56.196+03:00  INFO 29331 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T18:31:56.199+03:00  INFO 29331 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T18:32:02.735+03:00  INFO 29331 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T18:32:02.745+03:00  INFO 29331 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:51:23.497+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Starting XMLControllerTest using Java 17.0.17 with PID 32055 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:51:23.503+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : The following 1 profile is active: "prod"
-2026-03-23T19:51:25.788+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:51:25.821+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:51:25.823+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:51:25.941+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:51:25.942+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2394 ms
-2026-03-23T19:51:26.611+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:51:27.200+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 38999 (http) with context path '/'
-2026-03-23T19:51:27.235+03:00  INFO 32055 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Started XMLControllerTest in 4.554 seconds (process running for 8.278)
-2026-03-23T19:51:27.247+03:00  INFO 32055 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:51:27.249+03:00  INFO 32055 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:51:27.249+03:00  INFO 32055 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:51:28.731+03:00  INFO 32055 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T19:51:28.733+03:00  INFO 32055 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T19:51:28.739+03:00  INFO 32055 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T19:51:28.794+03:00 ERROR 32055 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.filestorage.service.FileService  : Файл не найден или поврежден. :/tmp/junit-375795426421977078/report.xml
-2026-03-23T19:51:28.800+03:00  INFO 32055 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.f.e.FileStorageExceptionHandler  : Файл не найден: Файл не найден или поврежден. 
-2026-03-23T19:51:29.074+03:00  INFO 32055 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:51:29.093+03:00  INFO 32055 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:51:59.938+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Starting XMLControllerTest using Java 17.0.17 with PID 32226 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:51:59.945+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : The following 1 profile is active: "prod"
-2026-03-23T19:52:02.114+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:52:02.148+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:52:02.149+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:52:02.265+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:52:02.266+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2283 ms
-2026-03-23T19:52:02.872+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:52:03.422+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40281 (http) with context path '/'
-2026-03-23T19:52:03.455+03:00  INFO 32226 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Started XMLControllerTest in 4.35 seconds (process running for 7.627)
-2026-03-23T19:52:03.475+03:00  INFO 32226 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:52:03.481+03:00  INFO 32226 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:52:03.489+03:00  INFO 32226 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:52:04.845+03:00  INFO 32226 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T19:52:04.846+03:00  INFO 32226 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T19:52:04.850+03:00  INFO 32226 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T19:52:04.905+03:00 ERROR 32226 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.filestorage.service.FileService  : Файл не найден или поврежден. :/tmp/junit-13125258352421022137/report.xml
-2026-03-23T19:52:04.912+03:00  INFO 32226 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.f.e.FileStorageExceptionHandler  : Файл не найден: Файл не найден или поврежден. 
-2026-03-23T19:52:05.130+03:00  INFO 32226 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:52:05.139+03:00  INFO 32226 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:52:23.817+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Starting EmployeeControllerTest using Java 17.0.17 with PID 32381 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:52:23.824+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : The following 1 profile is active: "prod"
-2026-03-23T19:52:25.880+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:52:25.913+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:52:25.915+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:52:26.008+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:52:26.009+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2147 ms
-2026-03-23T19:52:26.719+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:52:27.314+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 41955 (http) with context path '/'
-2026-03-23T19:52:27.351+03:00  INFO 32381 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Started EmployeeControllerTest in 4.383 seconds (process running for 7.403)
-2026-03-23T19:52:27.369+03:00  INFO 32381 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:52:27.374+03:00  INFO 32381 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:52:27.374+03:00  INFO 32381 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:52:28.643+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.695+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.722+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.757+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.806+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.866+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.931+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:28.990+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.059+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.135+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.175+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.226+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.328+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.405+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.462+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-15320320690600787167/employee.json/employee.json ]: /tmp/junit-15320320690600787167/employee.json/employee.json
-2026-03-23T19:52:29.618+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-14338262791975176815/employee.json/employee.json ]: /tmp/junit-14338262791975176815/employee.json/employee.json: Это не каталог
-2026-03-23T19:52:29.667+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-14338262791975176815/employee.json/employee.json ]: /tmp/junit-14338262791975176815/employee.json/employee.json: Это не каталог
-2026-03-23T19:52:29.707+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-14338262791975176815/employee.json/employee.json ]: /tmp/junit-14338262791975176815/employee.json/employee.json: Это не каталог
-2026-03-23T19:52:29.767+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-14338262791975176815/employee.json/employee.json ]: /tmp/junit-14338262791975176815/employee.json/employee.json: Это не каталог
-2026-03-23T19:52:29.814+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-14338262791975176815/employee.json/employee.json ]: /tmp/junit-14338262791975176815/employee.json/employee.json: Это не каталог
-2026-03-23T19:52:29.846+03:00 ERROR 32381 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-14338262791975176815/employee.json/employee.json ]: /tmp/junit-14338262791975176815/employee.json/employee.json: Это не каталог
-2026-03-23T19:52:29.919+03:00  INFO 32381 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:52:29.944+03:00  INFO 32381 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:54:08.544+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Starting EmployeeControllerTest using Java 17.0.17 with PID 32605 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:54:08.550+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : The following 1 profile is active: "prod"
-2026-03-23T19:54:10.711+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:54:10.754+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:54:10.757+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:54:10.885+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:54:10.886+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2297 ms
-2026-03-23T19:54:11.489+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:54:12.159+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40825 (http) with context path '/'
-2026-03-23T19:54:12.184+03:00  INFO 32605 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Started EmployeeControllerTest in 4.445 seconds (process running for 7.422)
-2026-03-23T19:54:12.199+03:00  INFO 32605 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:54:12.205+03:00  INFO 32605 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:54:12.206+03:00  INFO 32605 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:54:13.783+03:00  INFO 32605 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T19:54:13.785+03:00  INFO 32605 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T19:54:13.788+03:00  INFO 32605 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T19:54:14.129+03:00  INFO 32605 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:54:14.143+03:00  INFO 32605 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:54:37.844+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Starting EmployeeControllerTest using Java 17.0.17 with PID 32772 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:54:37.850+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : The following 1 profile is active: "prod"
-2026-03-23T19:54:39.838+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:54:39.862+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:54:39.863+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:54:39.946+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:54:39.947+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2064 ms
-2026-03-23T19:54:40.656+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:54:41.193+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 35711 (http) with context path '/'
-2026-03-23T19:54:41.225+03:00  INFO 32772 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Started EmployeeControllerTest in 4.191 seconds (process running for 7.773)
-2026-03-23T19:54:41.238+03:00  INFO 32772 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:54:41.241+03:00  INFO 32772 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:54:41.245+03:00  INFO 32772 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:54:42.604+03:00  INFO 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T19:54:42.605+03:00  INFO 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T19:54:42.609+03:00  INFO 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T19:54:42.963+03:00  INFO 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-3] c.g.a.m.e.controller.EmployeeController  : Запись о поверителе успешно удалена
-2026-03-23T19:54:43.110+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.snils: Неверный формат СНИЛС
-2026-03-23T19:54:43.164+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.snils: Укажите СНИЛС поверителя
-2026-03-23T19:54:43.231+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-6] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.name: Укажите имя поверителя
-2026-03-23T19:54:43.322+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-7] c.g.a.m.e.service.EmployeeService        :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:54:43.328+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-7] c.g.a.m.e.e.EmployeeExceptionHandler     :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:54:43.389+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-8] c.g.a.m.e.e.EmployeeExceptionHandler     : update.employee.name: Укажите имя поверителя
-2026-03-23T19:54:43.520+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-10] c.g.a.m.e.service.EmployeeService        : Поверитель с указанным СНИЛС уже существует
-2026-03-23T19:54:43.525+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-10] c.g.a.m.e.e.EmployeeExceptionHandler     : Поверитель с указанным СНИЛС уже существует
-2026-03-23T19:54:43.612+03:00  INFO 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.e.controller.EmployeeController  : Поверитель Петр Петров успешно добавлен
-2026-03-23T19:54:43.657+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-2] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.surname: Укажите фамилию поверителя
-2026-03-23T19:54:43.709+03:00  INFO 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-3] c.g.a.m.e.controller.EmployeeController  : Сведения о поверителе Павел Иванов обновлены
-2026-03-23T19:54:43.770+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.service.EmployeeService        :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:54:43.773+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.e.EmployeeExceptionHandler     :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:54:43.828+03:00 ERROR 32772 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.patronymic: Укажите отчество поверителя
-2026-03-23T19:54:43.869+03:00  INFO 32772 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:54:43.875+03:00  INFO 32772 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:55:03.007+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.MeasurementBpmApplicationTests   : Starting MeasurementBpmApplicationTests using Java 17.0.17 with PID 32981 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:55:03.012+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.MeasurementBpmApplicationTests   : The following 1 profile is active: "prod"
-2026-03-23T19:55:06.350+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:55:06.976+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.MeasurementBpmApplicationTests   : Started MeasurementBpmApplicationTests in 4.807 seconds (process running for 7.221)
-2026-03-23T19:55:06.982+03:00  INFO 32981 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:55:06.980+03:00  INFO 32981 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:55:06.985+03:00  INFO 32981 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:55:08.985+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Starting EmployeeControllerTest using Java 17.0.17 with PID 32981 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:55:08.986+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : The following 1 profile is active: "prod"
-2026-03-23T19:55:09.910+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:55:09.942+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:55:09.943+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:55:10.049+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:55:10.050+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1058 ms
-2026-03-23T19:55:10.494+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:55:10.806+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40789 (http) with context path '/'
-2026-03-23T19:55:10.829+03:00  INFO 32981 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:55:10.835+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Started EmployeeControllerTest in 1.942 seconds (process running for 11.08)
-2026-03-23T19:55:10.848+03:00  INFO 32981 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:55:10.847+03:00  INFO 32981 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:55:11.288+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T19:55:11.289+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T19:55:11.292+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-03-23T19:55:11.646+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-3] c.g.a.m.e.controller.EmployeeController  : Запись о поверителе успешно удалена
-2026-03-23T19:55:11.831+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.snils: Неверный формат СНИЛС
-2026-03-23T19:55:11.904+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.snils: Укажите СНИЛС поверителя
-2026-03-23T19:55:11.958+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-6] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.name: Укажите имя поверителя
-2026-03-23T19:55:12.018+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-7] c.g.a.m.e.service.EmployeeService        :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:55:12.022+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-7] c.g.a.m.e.e.EmployeeExceptionHandler     :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:55:12.141+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-8] c.g.a.m.e.e.EmployeeExceptionHandler     : update.employee.name: Укажите имя поверителя
-2026-03-23T19:55:12.287+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-10] c.g.a.m.e.service.EmployeeService        : Поверитель с указанным СНИЛС уже существует
-2026-03-23T19:55:12.293+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-10] c.g.a.m.e.e.EmployeeExceptionHandler     : Поверитель с указанным СНИЛС уже существует
-2026-03-23T19:55:12.393+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.e.controller.EmployeeController  : Поверитель Петр Петров успешно добавлен
-2026-03-23T19:55:12.446+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-2] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.surname: Укажите фамилию поверителя
-2026-03-23T19:55:12.507+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-3] c.g.a.m.e.controller.EmployeeController  : Сведения о поверителе Павел Иванов обновлены
-2026-03-23T19:55:12.592+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.service.EmployeeService        :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:55:12.595+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.e.EmployeeExceptionHandler     :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T19:55:12.691+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.patronymic: Укажите отчество поверителя
-2026-03-23T19:55:12.766+03:00 ERROR 32981 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-1882732372353530895/employee.json/employee.json ]: /tmp/junit-1882732372353530895/employee.json/employee.json: Это не каталог
-2026-03-23T19:55:12.802+03:00 ERROR 32981 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-1882732372353530895/employee.json/employee.json ]: /tmp/junit-1882732372353530895/employee.json/employee.json: Это не каталог
-2026-03-23T19:55:12.825+03:00 ERROR 32981 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-1882732372353530895/employee.json/employee.json ]: /tmp/junit-1882732372353530895/employee.json/employee.json: Это не каталог
-2026-03-23T19:55:12.895+03:00 ERROR 32981 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-1882732372353530895/employee.json/employee.json ]: /tmp/junit-1882732372353530895/employee.json/employee.json: Это не каталог
-2026-03-23T19:55:12.920+03:00 ERROR 32981 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-1882732372353530895/employee.json/employee.json ]: /tmp/junit-1882732372353530895/employee.json/employee.json: Это не каталог
-2026-03-23T19:55:12.959+03:00 ERROR 32981 --- [measurement-bpm-application] [Test worker] .g.a.m.e.r.EmployeeFileStorageRepository : Ошибка создания файла для хранения сведений о поверителях по пути [ /tmp/junit-1882732372353530895/employee.json/employee.json ]: /tmp/junit-1882732372353530895/employee.json/employee.json: Это не каталог
-2026-03-23T19:55:13.309+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Starting XMLControllerTest using Java 17.0.17 with PID 32981 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T19:55:13.312+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : The following 1 profile is active: "prod"
-2026-03-23T19:55:14.056+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T19:55:14.062+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T19:55:14.064+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T19:55:14.104+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-03-23T19:55:14.105+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 781 ms
-2026-03-23T19:55:14.337+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T19:55:14.515+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42025 (http) with context path '/'
-2026-03-23T19:55:14.529+03:00  INFO 32981 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T19:55:14.530+03:00  INFO 32981 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T19:55:14.529+03:00  INFO 32981 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Started XMLControllerTest in 1.448 seconds (process running for 14.775)
-2026-03-23T19:55:14.532+03:00  INFO 32981 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T19:55:14.564+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T19:55:14.565+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T19:55:14.571+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T19:55:14.582+03:00 ERROR 32981 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] c.g.a.m.filestorage.service.FileService  : Файл не найден или поврежден. :/tmp/junit-12752011793859090360/report.xml
-2026-03-23T19:55:14.586+03:00  INFO 32981 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] c.g.a.m.f.e.FileStorageExceptionHandler  : Файл не найден: Файл не найден или поврежден. 
-2026-03-23T19:55:14.812+03:00  INFO 32981 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:55:14.821+03:00  INFO 32981 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T19:55:14.861+03:00  INFO 32981 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T19:55:14.870+03:00  INFO 32981 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T20:48:28.823+03:00  INFO 35633 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 35633 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T20:48:28.836+03:00  INFO 35633 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T20:48:32.979+03:00  INFO 35633 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T20:48:33.085+03:00  INFO 35633 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T20:48:33.090+03:00  INFO 35633 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T20:48:33.321+03:00  INFO 35633 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T20:48:33.322+03:00  INFO 35633 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4211 ms
-2026-03-23T20:48:34.852+03:00  INFO 35633 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T20:48:35.545+03:00  INFO 35633 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T20:48:35.588+03:00  INFO 35633 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 8.68 seconds (process running for 10.108)
-2026-03-23T20:48:35.608+03:00  INFO 35633 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T20:48:35.613+03:00  INFO 35633 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T20:48:35.615+03:00  INFO 35633 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T20:48:35.624+03:00 ERROR 35633 --- [measurement-bpm-application] [task-2] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.github.alxsshv.measurementbpmapplication.filestorage.service.FileServiceScheduler.deleteOutdatedArshinReportFiles() throws java.io.IOException
 
-java.nio.file.NoSuchFileException: /home/aleksei/TMP/ArshinReports
-	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[na:na]
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106) ~[na:na]
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[na:na]
-	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:55) ~[na:na]
-	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:148) ~[na:na]
-	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99) ~[na:na]
-	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.getAttributes(FileTreeWalker.java:220) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.visit(FileTreeWalker.java:277) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.walk(FileTreeWalker.java:323) ~[na:na]
-	at java.base/java.nio.file.FileTreeIterator.<init>(FileTreeIterator.java:71) ~[na:na]
-	at java.base/java.nio.file.Files.walk(Files.java:3918) ~[na:na]
-	at java.base/java.nio.file.Files.walk(Files.java:3973) ~[na:na]
-	at com.github.alxsshv.measurementbpmapplication.filestorage.service.FileServiceScheduler.deleteOutdatedArshinReportFiles(FileServiceScheduler.java:50) ~[main/:na]
+	at com.github.alxsshv.arshin_client_starter.service.VriService.validateClientParams(VriService.java:53) ~[arshin-client-starter-1.0.1-plain.jar:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:114) ~[spring-aop-6.2.16.jar:6.2.16]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 74 common frames omitted
 
-2026-03-23T20:48:35.624+03:00 ERROR 35633 --- [measurement-bpm-application] [task-1] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.github.alxsshv.measurementbpmapplication.filestorage.service.FileServiceScheduler.deleteOutdatedTemporaryFiles() throws java.io.IOException
+2026-05-01T17:51:06.211+03:00  INFO 1464035 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1464035 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:51:06.218+03:00  INFO 1464035 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:51:09.142+03:00  INFO 1464035 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:51:09.168+03:00  INFO 1464035 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:51:09.169+03:00  INFO 1464035 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:51:09.264+03:00  INFO 1464035 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:51:09.265+03:00  INFO 1464035 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2865 ms
+2026-05-01T17:51:10.093+03:00  INFO 1464035 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-05-01T17:51:10.828+03:00  INFO 1464035 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2026-05-01T17:51:10.865+03:00  INFO 1464035 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.982 seconds (process running for 7.374)
+2026-05-01T17:51:10.880+03:00  INFO 1464035 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
+2026-05-01T17:51:10.882+03:00  INFO 1464035 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
+2026-05-01T17:51:10.882+03:00  INFO 1464035 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
+2026-05-01T17:51:11.040+03:00  INFO 1464035 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Запущено выполнение задачи [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] в потоке task-4
+2026-05-01T17:51:11.044+03:00  INFO 1464035 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Задача [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] уже выполнена
+2026-05-01T17:51:23.459+03:00  INFO 1464035 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T17:51:23.469+03:00  INFO 1464035 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-01T17:53:42.066+03:00  INFO 1464571 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1464571 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:53:42.072+03:00  INFO 1464571 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:53:45.123+03:00  INFO 1464571 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:53:45.151+03:00  INFO 1464571 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:53:45.152+03:00  INFO 1464571 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:53:45.267+03:00  INFO 1464571 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:53:45.268+03:00  INFO 1464571 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2997 ms
+2026-05-01T17:53:45.929+03:00  INFO 1464571 --- [measurement-bpm-application] [main] c.g.a.a.config.ArshinClientProperties    : ArshinClientStarter: Значение задержки между запросами не задано или задано неверно и будет установлено по умолчанию 5000 мс
+2026-05-01T17:53:45.948+03:00  WARN 1464571 --- [measurement-bpm-application] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+2026-05-01T17:53:45.955+03:00  INFO 1464571 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-01T17:53:45.996+03:00  INFO 1464571 --- [measurement-bpm-application] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
-java.nio.file.NoSuchFileException: /home/aleksei/TMP/tmp
-	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[na:na]
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106) ~[na:na]
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[na:na]
-	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:55) ~[na:na]
-	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:148) ~[na:na]
-	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99) ~[na:na]
-	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.getAttributes(FileTreeWalker.java:220) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.visit(FileTreeWalker.java:277) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.walk(FileTreeWalker.java:323) ~[na:na]
-	at java.base/java.nio.file.FileTreeIterator.<init>(FileTreeIterator.java:71) ~[na:na]
-	at java.base/java.nio.file.Files.walk(Files.java:3918) ~[na:na]
-	at java.base/java.nio.file.Files.walk(Files.java:3973) ~[na:na]
-	at com.github.alxsshv.measurementbpmapplication.filestorage.service.FileServiceScheduler.deleteOutdatedTemporaryFiles(FileServiceScheduler.java:64) ~[main/:na]
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-01T17:53:46.028+03:00 ERROR 1464571 --- [measurement-bpm-application] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportsApi' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/api/ReportsApi.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991) ~[spring-context-6.2.16.jar:6.2.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.16.jar:6.2.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.11.jar:3.5.11]
+	at com.github.alxsshv.measurementbpmapplication.MeasurementBpmApplication.main(MeasurementBpmApplication.java:14) ~[main/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'fsaReportFacade' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/FsaReportFacade.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'verificationRecordSupplementService' defined in file [/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main/com/github/alxsshv/measurementbpmapplication/reports/service/fsa/VerificationRecordSupplementService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'arshinClientApi' defined in class path resource [com/github/alxsshv/arshin_client_starter/config/ArshinClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'arshinClientApi' parameter 0: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 48 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vriService': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:429) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 61 common frames omitted
+Caused by: com.github.alxsshv.arshin_client_starter.exception.ArshinClientConfigurationException: Не указан  шифр организации в файле конфигурации. Пример заполнения файла свойств: + 
+client:
+  arshin:
+    params:
+      # Задержка между выполнением запросов к API ФГИС Аршин
+      between-requests-delay-ms : 5000
+    organization:
+        # Шифр организации-поверителя
+        sign: АИО
+        # Название организации поверителя как в разделе поверка ФГИС Аршин
+        title: АО "РОГА И КОПЫТЫ"
+    uri:
+      # URL по которому обращаемся в ФГИС Аршин для получения сведения о поверке
+      vri: "https://fgis.gost.ru/fundmetrology/eapi/vri?"
+
+
+	at com.github.alxsshv.arshin_client_starter.service.VriService.validateClientParams(VriService.java:53) ~[arshin-client-starter-1.0.1-plain.jar:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:114) ~[spring-aop-6.2.16.jar:6.2.16]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 74 common frames omitted
 
-2026-03-23T20:48:35.622+03:00 ERROR 35633 --- [measurement-bpm-application] [task-3] .a.i.SimpleAsyncUncaughtExceptionHandler : Unexpected exception occurred invoking async method: public void com.github.alxsshv.measurementbpmapplication.filestorage.service.FileServiceScheduler.deleteOutdatedFsaReportFiles() throws java.io.IOException
-
-java.nio.file.NoSuchFileException: /home/aleksei/TMP/FsaReports
-	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[na:na]
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106) ~[na:na]
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[na:na]
-	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:55) ~[na:na]
-	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:148) ~[na:na]
-	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99) ~[na:na]
-	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.getAttributes(FileTreeWalker.java:220) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.visit(FileTreeWalker.java:277) ~[na:na]
-	at java.base/java.nio.file.FileTreeWalker.walk(FileTreeWalker.java:323) ~[na:na]
-	at java.base/java.nio.file.FileTreeIterator.<init>(FileTreeIterator.java:71) ~[na:na]
-	at java.base/java.nio.file.Files.walk(Files.java:3918) ~[na:na]
-	at java.base/java.nio.file.Files.walk(Files.java:3973) ~[na:na]
-	at com.github.alxsshv.measurementbpmapplication.filestorage.service.FileServiceScheduler.deleteOutdatedFsaReportFiles(FileServiceScheduler.java:36) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.16.jar:6.2.16]
-	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:114) ~[spring-aop-6.2.16.jar:6.2.16]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2026-03-23T20:49:20.795+03:00  INFO 35633 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T20:49:20.798+03:00  INFO 35633 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T20:49:20.802+03:00  INFO 35633 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T20:51:11.088+03:00  INFO 35633 --- [measurement-bpm-application] [http-nio-9090-exec-9] c.g.a.m.r.u.e.ExcelMultipartFileReader   : Читаем данные из файла
-2026-03-23T20:51:13.263+03:00  INFO 35633 --- [measurement-bpm-application] [http-nio-9090-exec-9] c.g.a.m.r.utils.excel.EmployeeFinder     : Поверитель с ФИО Романов Андрей Александрович не найден. Обновим данные о поверителях и попробуем еще раз
-2026-03-23T20:51:13.272+03:00 ERROR 35633 --- [measurement-bpm-application] [http-nio-9090-exec-9] c.g.a.m.r.e.ReportsExceptionHandler      : Ничего не знаю о поверителе Романов Андрей Александрович. Возможно данные поверителя указаны неверно. Если всё указано верно добавьте сведения о поверителе в раздел "Список поверителей" настоящего ПО
-2026-03-23T20:54:37.868+03:00  INFO 35633 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T20:54:37.873+03:00  INFO 35633 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T20:55:00.144+03:00  INFO 36190 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 36190 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T20:55:00.157+03:00  INFO 36190 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T20:55:02.851+03:00  INFO 36190 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T20:55:02.877+03:00  INFO 36190 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T20:55:02.879+03:00  INFO 36190 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T20:55:02.964+03:00  INFO 36190 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T20:55:02.965+03:00  INFO 36190 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2642 ms
-2026-03-23T20:55:03.763+03:00  INFO 36190 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T20:55:04.419+03:00  INFO 36190 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T20:55:04.458+03:00  INFO 36190 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.824 seconds (process running for 7.708)
-2026-03-23T20:55:04.473+03:00  INFO 36190 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T20:55:04.475+03:00  INFO 36190 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T20:55:04.474+03:00  INFO 36190 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T20:55:04.480+03:00 ERROR 36190 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Отсутствует директория для поиска файлов. Создаем директорию [ /home/aleksei/TMP/FsaReports ]
-2026-03-23T20:55:04.477+03:00 ERROR 36190 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Отсутствует директория для поиска файлов. Создаем директорию [ /home/aleksei/TMP/tmp ]
-2026-03-23T20:55:04.480+03:00 ERROR 36190 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Отсутствует директория для поиска файлов. Создаем директорию [ /home/aleksei/TMP/ArshinReports ]
-2026-03-23T20:55:15.693+03:00  INFO 36190 --- [measurement-bpm-application] [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T20:55:15.694+03:00  INFO 36190 --- [measurement-bpm-application] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T20:55:15.700+03:00  INFO 36190 --- [measurement-bpm-application] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T20:55:39.590+03:00  INFO 36190 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T20:55:39.597+03:00  INFO 36190 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T20:56:14.067+03:00  INFO 36402 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 36402 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T20:56:14.077+03:00  INFO 36402 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T20:56:16.855+03:00  INFO 36402 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T20:56:16.888+03:00  INFO 36402 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T20:56:16.889+03:00  INFO 36402 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T20:56:17.023+03:00  INFO 36402 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T20:56:17.024+03:00  INFO 36402 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2800 ms
-2026-03-23T20:56:18.094+03:00  INFO 36402 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T20:56:18.675+03:00  INFO 36402 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T20:56:18.710+03:00  INFO 36402 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 6.085 seconds (process running for 7.196)
-2026-03-23T20:56:18.726+03:00  INFO 36402 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T20:56:18.729+03:00  INFO 36402 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T20:56:18.729+03:00  INFO 36402 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T20:56:24.882+03:00  INFO 36402 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T20:56:24.884+03:00  INFO 36402 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T20:56:24.888+03:00  INFO 36402 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-03-23T20:57:06.992+03:00  INFO 36402 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T20:57:06.997+03:00  INFO 36402 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T20:57:24.594+03:00  INFO 36595 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 36595 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T20:57:24.601+03:00  INFO 36595 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T20:57:27.785+03:00  INFO 36595 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T20:57:27.811+03:00  INFO 36595 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T20:57:27.813+03:00  INFO 36595 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T20:57:27.931+03:00  INFO 36595 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T20:57:27.933+03:00  INFO 36595 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3116 ms
-2026-03-23T20:57:29.879+03:00  INFO 36595 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T20:57:30.687+03:00  INFO 36595 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T20:57:30.723+03:00  INFO 36595 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 7.617 seconds (process running for 8.841)
-2026-03-23T20:57:30.749+03:00  INFO 36595 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T20:57:30.750+03:00  INFO 36595 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T20:57:30.755+03:00  INFO 36595 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T20:57:41.299+03:00  INFO 36595 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T20:57:41.301+03:00  INFO 36595 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T20:57:41.304+03:00  INFO 36595 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-23T20:57:49.385+03:00  INFO 36595 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T20:57:49.394+03:00  INFO 36595 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T20:58:20.908+03:00  INFO 36732 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 36732 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T20:58:20.914+03:00  INFO 36732 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
-2026-03-23T20:58:23.703+03:00  INFO 36732 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2026-03-23T20:58:23.727+03:00  INFO 36732 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T20:58:23.728+03:00  INFO 36732 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T20:58:23.815+03:00  INFO 36732 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T20:58:23.817+03:00  INFO 36732 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2735 ms
-2026-03-23T20:58:24.709+03:00  INFO 36732 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T20:58:25.498+03:00  INFO 36732 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2026-03-23T20:58:25.573+03:00  INFO 36732 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 5.91 seconds (process running for 7.182)
-2026-03-23T20:58:25.605+03:00  INFO 36732 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T20:58:25.605+03:00  INFO 36732 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T20:58:25.607+03:00  INFO 36732 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T20:58:30.747+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T20:58:30.748+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T20:58:30.752+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-03-23T20:58:35.988+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-6] c.g.a.m.r.u.e.ExcelMultipartFileReader   : Читаем данные из файла
-2026-03-23T20:58:38.155+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-6] c.g.a.m.filestorage.api.FileStorageApi   : Сгенерировано имя файла: [ ArshinReport442c9451-96a2-4629-a254-e4af9aad2e32.xml ]
-2026-03-23T20:58:38.496+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-6] c.g.a.m.r.u.xml.arshin.ArshinXmlWriter   : xml файл сформирован
-2026-03-23T20:58:38.523+03:00  INFO 36732 --- [measurement-bpm-application] [http-nio-9090-exec-6] c.g.a.m.filestorage.api.FileStorageApi   : Файл [ ArshinReport442c9451-96a2-4629-a254-e4af9aad2e32.xml ] успешно сохранен в файловое хранилище
-2026-03-23T21:00:26.996+03:00  INFO 36732 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T21:00:27.002+03:00  INFO 36732 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T21:01:24.598+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.MeasurementBpmApplicationTests   : Starting MeasurementBpmApplicationTests using Java 17.0.17 with PID 37216 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T21:01:24.603+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.MeasurementBpmApplicationTests   : The following 1 profile is active: "prod"
-2026-03-23T21:01:29.163+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T21:01:30.380+03:00  INFO 37216 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T21:01:30.380+03:00  INFO 37216 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T21:01:30.386+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.MeasurementBpmApplicationTests   : Started MeasurementBpmApplicationTests in 6.535 seconds (process running for 9.387)
-2026-03-23T21:01:30.381+03:00  INFO 37216 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T21:01:33.439+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Starting EmployeeControllerTest using Java 17.0.17 with PID 37216 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T21:01:33.441+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : The following 1 profile is active: "prod"
-2026-03-23T21:01:34.928+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T21:01:34.991+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T21:01:34.995+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T21:01:35.185+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-23T21:01:35.188+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1737 ms
-2026-03-23T21:01:35.800+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T21:01:36.236+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40133 (http) with context path '/'
-2026-03-23T21:01:36.266+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.e.c.EmployeeControllerTest       : Started EmployeeControllerTest in 2.936 seconds (process running for 15.267)
-2026-03-23T21:01:36.272+03:00  INFO 37216 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T21:01:36.278+03:00  INFO 37216 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T21:01:36.284+03:00  INFO 37216 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T21:01:36.754+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T21:01:36.756+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T21:01:36.760+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-03-23T21:01:37.290+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-3] c.g.a.m.e.controller.EmployeeController  : Запись о поверителе успешно удалена
-2026-03-23T21:01:37.621+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.snils: Неверный формат СНИЛС
-2026-03-23T21:01:37.719+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-6] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.snils: Укажите СНИЛС поверителя
-2026-03-23T21:01:37.811+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-7] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.name: Укажите имя поверителя
-2026-03-23T21:01:37.871+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-8] c.g.a.m.e.service.EmployeeService        :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T21:01:37.874+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-8] c.g.a.m.e.e.EmployeeExceptionHandler     :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T21:01:37.928+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-9] c.g.a.m.e.e.EmployeeExceptionHandler     : update.employee.name: Укажите имя поверителя
-2026-03-23T21:01:38.082+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.e.service.EmployeeService        : Поверитель с указанным СНИЛС уже существует
-2026-03-23T21:01:38.088+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-1] c.g.a.m.e.e.EmployeeExceptionHandler     : Поверитель с указанным СНИЛС уже существует
-2026-03-23T21:01:38.169+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-2] c.g.a.m.e.controller.EmployeeController  : Поверитель Петр Петров успешно добавлен
-2026-03-23T21:01:38.240+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-3] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.surname: Укажите фамилию поверителя
-2026-03-23T21:01:38.350+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-4] c.g.a.m.e.controller.EmployeeController  : Сведения о поверителе Павел Иванов обновлены
-2026-03-23T21:01:38.443+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.service.EmployeeService        :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T21:01:38.449+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-5] c.g.a.m.e.e.EmployeeExceptionHandler     :  Информация о поверителе Павлов Павел не найдена
-2026-03-23T21:01:38.527+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-1-exec-6] c.g.a.m.e.e.EmployeeExceptionHandler     : create.employee.patronymic: Укажите отчество поверителя
-2026-03-23T21:01:38.973+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Starting XMLControllerTest using Java 17.0.17 with PID 37216 (started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
-2026-03-23T21:01:38.974+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : The following 1 profile is active: "prod"
-2026-03-23T21:01:39.959+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2026-03-23T21:01:39.962+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-23T21:01:39.963+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-23T21:01:40.004+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2026-03-23T21:01:40.006+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1027 ms
-2026-03-23T21:01:40.460+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-03-23T21:01:40.735+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 34895 (http) with context path '/'
-2026-03-23T21:01:40.761+03:00  INFO 37216 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
-2026-03-23T21:01:40.762+03:00  INFO 37216 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
-2026-03-23T21:01:40.767+03:00  INFO 37216 --- [measurement-bpm-application] [Test worker] c.g.a.m.f.controller.XMLControllerTest   : Started XMLControllerTest in 1.909 seconds (process running for 19.768)
-2026-03-23T21:01:40.767+03:00  INFO 37216 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
-2026-03-23T21:01:40.808+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-23T21:01:40.809+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-23T21:01:40.815+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-03-23T21:01:40.832+03:00 ERROR 37216 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] c.g.a.m.filestorage.service.FileService  : Файл не найден или поврежден. :/tmp/junit-10335908968095938360/report.xml
-2026-03-23T21:01:40.844+03:00  INFO 37216 --- [measurement-bpm-application] [http-nio-auto-2-exec-1] c.g.a.m.f.e.FileStorageExceptionHandler  : Файл не найден: Файл не найден или поврежден. 
-2026-03-23T21:01:41.027+03:00  INFO 37216 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T21:01:41.043+03:00  INFO 37216 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-23T21:01:41.098+03:00  INFO 37216 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-23T21:01:41.113+03:00  INFO 37216 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-01T17:54:57.571+03:00  INFO 1464804 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Starting MeasurementBpmApplication using Java 17.0.17 with PID 1464804 (/home/aleksei/OpenideProjects/measurement-bpm-application/build/classes/java/main started by aleksei in /home/aleksei/OpenideProjects/measurement-bpm-application)
+2026-05-01T17:54:57.577+03:00  INFO 1464804 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : The following 1 profile is active: "prod"
+2026-05-01T17:54:59.985+03:00  INFO 1464804 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2026-05-01T17:55:00.012+03:00  INFO 1464804 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T17:55:00.013+03:00  INFO 1464804 --- [measurement-bpm-application] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-01T17:55:00.104+03:00  INFO 1464804 --- [measurement-bpm-application] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-01T17:55:00.105+03:00  INFO 1464804 --- [measurement-bpm-application] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2395 ms
+2026-05-01T17:55:00.820+03:00  INFO 1464804 --- [measurement-bpm-application] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-05-01T17:55:01.366+03:00  INFO 1464804 --- [measurement-bpm-application] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2026-05-01T17:55:01.396+03:00  INFO 1464804 --- [measurement-bpm-application] [main] c.g.a.m.MeasurementBpmApplication        : Started MeasurementBpmApplication in 4.968 seconds (process running for 6.167)
+2026-05-01T17:55:01.409+03:00  INFO 1464804 --- [measurement-bpm-application] [task-1] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФГИС Аршин в файловом хранилище
+2026-05-01T17:55:01.410+03:00  INFO 1464804 --- [measurement-bpm-application] [task-2] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки временных файлов в файловом хранилище
+2026-05-01T17:55:01.410+03:00  INFO 1464804 --- [measurement-bpm-application] [task-3] c.g.a.m.f.service.FileServiceScheduler   : Запущен процесс очитки устаревших отчетов о поверке для ФСА в файловом хранилище
+2026-05-01T17:55:01.518+03:00  INFO 1464804 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Запущено выполнение задачи [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] в потоке task-4
+2026-05-01T17:55:01.522+03:00  INFO 1464804 --- [measurement-bpm-application] [task-4] c.g.a.m.r.service.FsaReportTaskExecutor  : Задача [ d9a1f42e-19c4-4db0-9e43-d94f159c7240 ] уже выполнена
+2026-05-01T17:55:04.308+03:00  INFO 1464804 --- [measurement-bpm-application] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T17:55:04.317+03:00  INFO 1464804 --- [measurement-bpm-application] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
