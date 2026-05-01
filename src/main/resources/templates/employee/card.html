@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Редактирование данных пользователя</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/angular.min.js"></script>
+</head>
+
+<script type="text/javascript">
+    var app = angular.module("EMPLOYEE_CARD", []);
+    var idAttr = new URL (document.URL).searchParams.get("id");
+        app.controller("EMPLOYEE_CARD_CTRL", function($scope, $http){
+            $scope.reference = "/employees/form/"+idAttr+"?id="+idAttr
+
+            $scope.getEmployee = function(){
+                $http({
+                url: "/employee/"+idAttr,
+                method: "GET"
+            }).then(function(response){
+                $scope.employee = response.data;
+            });
+            }
+
+            $scope.getEmployee();
+
+        });
+
+
+</script>
+
+<body ng-app="EMPLOYEE_CARD" ng-controller="EMPLOYEE_CARD_CTRL">
+<script src="/js/bootstrap.bundle.min.js"></script>
+<div class="container text-center">
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-primary me-2" type="button" onclick="location.href='/'">Домой</button>
+            <button class="btn btn-outline-primary me-2" type="button" onclick="location.href='/employees'">К списку поверителей</button>
+            <a href="{{reference}}" class="btn btn-outline-info " tabindex="-1" role="button">Редактирование</a>
+        </form>
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <dl class="row text-start" >
+
+                <dt class="col-sm-6">Фамилия</dt>
+                <dd ng-model="type" class="col-sm-6">{{employee.surname}}</dd>
+
+                <dt class="col-sm-6">Имя</dt>
+                <dd ng-model="type" class="col-sm-6">{{employee.name}}</dd>
+
+                <dt class="col-sm-6 text-truncate">Отчество</dt>
+                <dd ng-model="type" class="col-sm-6">{{employee.patronymic}}</dd>
+
+                <dt class="col-sm-6">СНИЛС</dt>
+                <dd ng-model="type" class="col-sm-6">{{employee.snils}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Список пользователей</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+</head>
+<script type="text/javascript">
+    var app = angular.module("EMPLOYEE_FORM", []);
+    app.controller("EMPLOYEE_FORM_CTRL", function($scope, $http){
+
+     // сохранение в БД;
+            $scope.addEmployee = function(){
+             if (/^([0-9]{11})$/.exec($scope.employee.snils)){
+                $http({
+                url: "/employee",
+                method: "POST",
+                data: {
+                    surname:$scope.employee.surname,
+                    name:$scope.employee.name,
+                    patronymic:$scope.employee.patronymic,
+                    snils:$scope.employee.snils
+                }
+            }).then(function successCallback(response){
+                console.log($scope.employee);
+                alert(response.data.message);
+                $scope.clearFields();
+                }, function errorCallback(response){
+                   alert(response.data.message)
+                });
+            } else {
+                alert('Неверный формат СНИЛС');
+            }
+            }
+
+            $scope.clearFields = function(){
+                $scope.employee.surname = "";
+                $scope.employee.name = "";
+                $scope.employee.patronymic = "";
+                $scope.employee.snils = "";
+            }
+
+        });
+</script>
+<body ng-app="EMPLOYEE_FORM" ng-controller="EMPLOYEE_FORM_CTRL">
+<script src="/js/bootstrap.bundle.min.js"></script>
+<div class="container text-center">
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-primary me-2" type="button" onclick="location.href='/'">Домой</button>
+            <button class="btn btn-outline-primary me-2" type="button" onclick="location.href='/employees'">Cписок поверителей</button>
+        </form>
+
+    </nav>
+    <div class="col-md-4">
+        <span class="input-group-text">Фамилия</span>
+        <input type="text" ng-model="employee.surname" class="form-control" value="" required>
+
+        <span class="input-group-text">Имя</span>
+        <input type="text" ng-model="employee.name" class="form-control" value="" required>
+
+        <span class="input-group-text">Отчество</span>
+        <input type="text" ng-model="employee.patronymic" class="form-control" value="" required>
+
+        <span class="input-group-text">СНИЛС (указывается числом, без тире и пробелов)</span>
+        <input type="text" ng-model="employee.snils" class="form-control" value="" required>
+        <div class="col-12">
+            <button class="btn btn-primary" ng-click="addEmployee()" type="button">Добавить пользователя</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

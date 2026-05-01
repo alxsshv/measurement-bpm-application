@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Редактирование данных поверителя</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/angular.min.js"></script>
+</head>
+
+<script type="text/javascript">
+    var app = angular.module("EDIT_EMPLOYEE", []);
+    var idAttr = new URL (document.URL).searchParams.get("id");
+        app.controller("EDIT_EMPLOYEE_CTRL", function($scope, $http){
+
+
+            $scope.getEmployee = function(){
+                $http({
+                url: "/employee/"+idAttr,
+                method: "GET"
+            }).then(function(response){
+                $scope.employee = response.data;
+            });
+            }
+
+            $scope.getEmployee();
+
+            $scope.saveEmployee = function(){
+            $http({
+                url: "/employee/"+idAttr,
+                method: "PUT",
+                data: {
+                    id:idAttr,
+                    snils:$scope.employee.snils,
+                    name:$scope.employee.name,
+                    surname:$scope.employee.surname,
+                    patronymic:$scope.employee.patronymic}
+            }).then(function successCallback(response){
+                console.log($scope.employee);
+                alert(response.data.message);
+                }, function errorCallback(response){
+                   alert(response.data.message)
+                });
+            }
+
+        });
+
+
+</script>
+
+<body ng-app="EDIT_EMPLOYEE" ng-controller="EDIT_EMPLOYEE_CTRL">
+<script src="/js/bootstrap.bundle.min.js"></script>
+<div class="container text-center">
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" type="button" onclick="location.href='/'">Домой</button>
+            <button class="btn btn-outline-success me-2" type="button" onclick="location.href='/employees'">К списку пользователей</button>
+        </form>
+    </nav>
+
+    <form>
+        <input ng-model="employee.id" type="text" value="$employee.id" name="id" hidden>
+
+        <span class="input-group-text" id="surname">Фамилия</span>
+        <input ng-model="employee.surname" type="text" class="form-control" name="surname" value="${{employee.employeeName.surname}}">
+
+        <span class="input-group-text" id="name">Имя</span>
+        <input ng-model="employee.name" type="text" class="form-control" name="name" value="${employee.employeeName.name}">
+
+        <span class="input-group-text" id="patronymic">отчество</span>
+        <input ng-model="employee.patronymic" type="text" class="form-control" name="patronymic" value="${employee.employeeName.patronymic}">
+
+        <span class="input-group-text" id="department">СНИЛС (число 11 знаков)</span>
+        <input ng-model="employee.snils" type="text" class="form-control" name="snils" value="${employee.snils}">
+
+        <div class="row">
+            <button class="btn btn-primary" ng-click="saveEmployee()" type="button">Сохранить</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

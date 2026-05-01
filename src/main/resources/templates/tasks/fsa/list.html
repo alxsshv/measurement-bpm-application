@@ -1,0 +1,108 @@
+<!doctype html>
+<html data-bs-theme="dark" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Список отчетов о поверке для ФСА</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/angular.min.js"></script>
+</head>
+<script type="text/javascript">
+    var app = angular.module("TASK_LIST", []);
+    app.controller("TASK_LIST_CTRL", function($scope, $http){
+
+        $scope.tasks = [];
+        $scope.getTasks = function(){
+        $http({
+            url: "/scheduled/report/fsa",
+            method: "GET"
+        }).then(function(response){
+            $scope.tasks = response.data;
+            console.log($scope.tasks);
+        });
+        }
+
+        $scope.addTask = function () {
+            $scope.buildFormData();
+            console.log('Отправляем запрос');
+            $http({
+                url: "/scheduled/report/fsa",
+                method: "POST",
+                data: formData,
+                headers: {
+                    'Accept': '*/*',
+                    'Content-Type': undefined
+                }
+            }).then(function successCallback (response) {
+                responseBody = response.data;
+                $scope.getTasks();
+                formData = new FormData();
+            }, function errorCallback(response){
+                alert(response.data.message);
+                console.log(response.data.message)
+            });
+        }
+
+        let formData = new FormData();
+        $scope.buildFormData = function () {
+            formData.append('file', file.files[0]);
+        }
+
+        $scope.deleteTask = function(delId) {
+            $http({
+                url: "/scheduled/report/fsa/"+ delId,
+                method: "DELETE"
+            }).then(function(response) {
+                $scope.getTasks();
+            });
+        }
+
+        $scope.getReport = function (filename) {
+            window.location.href = "/xml/fsa?filename=" + filename;
+        }
+
+        setInterval(() => $scope.getTasks(), 30000)
+
+        $scope.getTasks();
+    });
+
+
+</script>
+<body  ng-app="TASK_LIST" ng-controller="TASK_LIST_CTRL">
+<script src="js/bootstrap.bundle.min.js"></script>
+<div class="container text-center">
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-primary me-2" type="button" onclick="location.href='/'">Домой</button>
+        </form>
+    </nav>
+    <div class="row">
+        <table class="table table-primary table-striped table-hover">
+            <tr>
+                <th>Название</th>
+                <th>Состояние</th>
+                <th>Дата создания</th>
+                <th>Последняя попытка в</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="task in tasks">
+                <td>{{task.title}}</td>
+                <td>{{task.status}}</td>
+                <td>{{task.creationTimestamp}}</td>
+                <td>{{task.lastAttemptTimeStamp}}</td>
+                <td><button class="btn btn-primary" ng-show="task.status === 'ОТЧЕТ ГОТОВ'" ng-click="getReport(task.reportFilename)" type="button">Получить отчет</button></td></tr>
+        </table>
+    </div>
+    <div class="row bg-secondary text-white">
+        <div class="row justify-content-center">Добавление нового отчета</div>
+        <div class="row">
+            <div class="col-md-12">
+                <input class="inline-block" type="file" file-model="change.fnEvidence" name="file" ng-model="file"
+                       data-rule-required="true" id="file" accept=".xlsx">
+                <button class="btn btn-primary" ng-click="addTask()" type="button">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: Employee API
+  description: API для управления информацией о поверителях
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Локальный сервер
+
+paths:
+  /api/v1/employee:
+    get:
+      summary: Получение списка всех поверителей
+      operationId: geEmployeeList
+      tags:
+        - Employee
+      responses:
+        '200':
+          description: Успешный ответ со списком поверителей
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeDto'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+
+    post:
+      summary: Добавление нового поверителя
+      operationId: addEmployee
+      tags:
+        - Employee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeDto'
+      responses:
+        '201':
+          description: Поверитель успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '400':
+          description: Ошибка валидации или поверитель уже существует
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '500':
+          description: Ошибка хранения данных
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+
+  /api/v1/employee/{id}:
+    get:
+      summary: Получение информации о поверителе по ID
+      operationId: getEmployee
+      tags:
+        - Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Уникальный идентификатор поверителя
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешный ответ с данными поверителя
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeDto'
+        '404':
+          description: Поверитель не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+
+    put:
+      summary: Обновление информации о поверителе
+      operationId: editEmployee
+      tags:
+        - Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Уникальный идентификатор поверителя
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeDto'
+      responses:
+        '200':
+          description: Информация о поверителе успешно обновлена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '400':
+          description: Ошибка валидации
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '404':
+          description: Поверитель не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '500':
+          description: Ошибка хранения данных
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+
+    delete:
+      summary: Удаление поверителя
+      operationId: deleteEmployee
+      tags:
+        - Employee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Уникальный идентификатор поверителя
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Поверитель успешно удален
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '404':
+          description: Поверитель не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceMessage'
+
+components:
+  schemas:
+    EmployeeDto:
+      type: object
+      description: Данные поверителя
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор поверителя
+          example: "1"
+        name:
+          type: string
+          description: Имя поверителя
+          example: "Иван"
+        surname:
+          type: string
+          description: Фамилия поверителя
+          example: "Иванов"
+        patronymic:
+          type: string
+          description: Отчество поверителя
+          example: "Иванович"
+        snils:
+          type: string
+          description: СНИЛС поверителя (11 цифр без пробелов и символов)
+          minLength: 11
+          maxLength: 11
+          example: "12345678901"
+      required:
+        - name
+        - surname
+        - patronymic
+        - snils
+
+    ServiceMessage:
+      type: object
+      description: Сообщение об операции
+      properties:
+        message:
+          type: string
+          description: Текст сообщения
+          example: "Поверитель Иван Иванов успешно добавлен"
+      required:
+        - message

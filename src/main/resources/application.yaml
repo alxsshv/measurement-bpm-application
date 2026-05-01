@@ -1,0 +1,61 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: measurement-bpm-application
+  profiles:
+    active: prod
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  thymeleaf:
+    cache: true
+    prefix: classpath:/templates/
+  task:
+    scheduling:
+      pool:
+        size: 5
+
+# Путь для хранения логов
+logging:
+  file:
+    path: src/logs/
+
+paths:
+  # Путь к каталогу для хранения отчетов о поверке для ФСА
+  fsa-report-storage-path: "/home/aleksei/TMP/FsaReports"
+  # Путь к каталогу для хранения отчетов о поверке для ФГИС Аршин
+  arshin-report-storage-path: "/home/aleksei/TMP/ArshinReports"
+  # Путь каталогу для хранения списка поверителей
+  employee-storage-path: "/home/aleksei/TMP/"
+  # Путь к каталогу для хранения списка задач на создание отчетов
+  fsa-report-task-storage-path: "/home/aleksei/TMP/"
+  # Путь к каталогу для хранения временных файлов
+  temporary: "/home/aleksei/TMP/tmp"
+  # URL по которому обращаемся в ФГИС Аршин для получения сведения о поверке
+  arshin-vri-uri: "https://fgis.gost.ru/fundmetrology/eapi/vri?"
+
+# Сведения о хранилище файлов
+storage:
+  # Приложение периодически очищает неиспользуемые файлы в каталогах
+  cleanup:
+    # Время жизни файлов в системе в часах ()
+    filesTtlInHours: 48
+    # Интервал запуска сборщика устаревших файлов для каждого типа файлов в минутах
+    intervalInMinutes:
+      # Интервал проверки временных файлов
+      temporary: 305
+      # Интервал проверки отчетов для ФСА
+      reportsFsa: 300
+      # Интервал проверки отчетов для ФГИС Аршин
+      reportsArshin: 302
+
+
+organization:
+  # Шифр организации-поверителя
+  sign: АЯО
+  # Название организации поверителя как в разделе поверка ФГИС Аршин
+  title: АО "НИИФИ"
