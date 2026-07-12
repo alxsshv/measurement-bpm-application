@@ -37,7 +37,7 @@ public class EmployeeController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ServiceMessage addEmployee(@RequestBody EmployeeDto employee)  {
+    public ServiceMessage addEmployee(@RequestBody Employee employee)  {
         employeeService.create(employee);
         String okMessage = String.format("Поверитель %s %s успешно добавлен", employee.getName(), employee.getSurname());
         log.info(okMessage);
@@ -46,7 +46,7 @@ public class EmployeeController {
 
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ServiceMessage editEmployee(@RequestBody EmployeeDto employee) {
+    public ServiceMessage editEmployee(@RequestBody Employee employee) {
         employeeService.update(employee);
         String okMessage = String.format("Сведения о поверителе %s %s обновлены", employee.getName(), employee.getSurname());
         log.info(okMessage);

@@ -1,17 +1,16 @@
 package com.github.alxsshv.measurementbpmapplication.reports.service.fsa;
 
-import com.github.alxsshv.measurementbpmapplication.arshinclient.api.ArshinClientApi;
+import com.github.alxsshv.arshin_client_starter.api.ArshinClientApi;
+import com.github.alxsshv.arshin_client_starter.dto.vri.VriItem;
 import com.github.alxsshv.measurementbpmapplication.reports.entity.fsa.FsaVerificationRecord;
 import com.github.alxsshv.measurementbpmapplication.reports.exception.ArshinResponseException;
 import com.github.alxsshv.measurementbpmapplication.reports.exception.ReportCreationException;
-import com.github.alxsshv.measurementbpmapplication.arshinclient.dto.vri.VriItem;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.github.alxsshv.measurementbpmapplication.reports.utils.fsa.VerificationRecordToVriItemMatcher.getMatchedVriItem;
 
