@@ -1,0 +1,33 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        # Магическая строчка: включит кэширование зависимостей Gradle
+        cache: 'gradle' 
+        
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+      # Этот шаг оптимизирует работу Gradle в CI (включает кэш сборок, демонов и т.д.)
+      
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+      
+    - name: Build and Test
+      run: ./gradlew build
+      # Команда 'build' в Gradle по умолчанию включает компиляцию и запуск тестов
