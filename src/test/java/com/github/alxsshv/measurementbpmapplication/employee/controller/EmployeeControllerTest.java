@@ -59,7 +59,7 @@ public class EmployeeControllerTest {
    @DisplayName("Test getEmployeeList if list is not empty")
    void testGetEmployeeListIfListNotEmpty(){
       ResponseEntity<Employee[]> response = template.getRestTemplate()
-              .getForEntity("http://localhost:"+ port +"/employee", Employee[].class);
+              .getForEntity("http://localhost:"+ port +"/api/v1/employee", Employee[].class);
       Assertions.assertNotNull(response.getBody());
       Assertions.assertEquals(1,response.getBody().length);
    }
@@ -69,7 +69,7 @@ public class EmployeeControllerTest {
    void testGetEmployeeListIfListEmpty() {
       storage.deleteAll();
       ResponseEntity<Employee[]> response = template.getRestTemplate()
-              .getForEntity("http://localhost:"+ port +"/employee", Employee[].class);
+              .getForEntity("http://localhost:"+ port +"/api/v1/employee", Employee[].class);
       Assertions.assertNotNull(response.getBody());
       Assertions.assertTrue(Arrays.stream(response.getBody()).toList().isEmpty());
    }
@@ -78,7 +78,7 @@ public class EmployeeControllerTest {
    @DisplayName("Test getEmployee")
    void testGetEmployee(){
       ResponseEntity<Employee> response = template.getRestTemplate()
-              .getForEntity("http://localhost:"+ port +"/employee/1", Employee.class);
+              .getForEntity("http://localhost:"+ port +"/api/v1/employee/1", Employee.class);
       Assertions.assertNotNull(response.getBody());
       Assertions.assertEquals("Иван",response.getBody().getName());
    }
@@ -93,7 +93,7 @@ public class EmployeeControllerTest {
       employee.setSurname("Петров");
       employee.setSnils("77777777777");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:"+ port +"/employee",employee, String.class);
+              .postForEntity("http://localhost:"+ port +"/api/v1/employee",employee, String.class);
       Assertions.assertEquals(201,response.getStatusCode().value());
    }
 
@@ -107,7 +107,7 @@ public class EmployeeControllerTest {
       employee.setSurname("Иванов");
       employee.setSnils("11111111111");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:"+ port + "/employee",employee, String.class);
+              .postForEntity("http://localhost:"+ port + "/api/v1/employee",employee, String.class);
       Assertions.assertEquals(400,response.getStatusCode().value());
    }
 
@@ -120,7 +120,7 @@ public class EmployeeControllerTest {
       employee.setPatronymic("Петрович");
       employee.setSnils("77777777777");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:"+ port + "/employee", employee, String.class);
+              .postForEntity("http://localhost:"+ port + "/api/v1/employee", employee, String.class);
       Assertions.assertEquals(400,response.getStatusCode().value());
    }
 
@@ -133,7 +133,7 @@ public class EmployeeControllerTest {
       employee.setPatronymic("Петрович");
       employee.setSnils("77777777777");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:" + port + "/employee", employee, String.class);
+              .postForEntity("http://localhost:" + port + "/api/v1/employee", employee, String.class);
       Assertions.assertEquals(400, response.getStatusCode().value());
    }
 
@@ -146,7 +146,7 @@ public class EmployeeControllerTest {
       employee.setName("Петр");
       employee.setSnils("77777777777");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:" + port + "/employee",employee, String.class);
+              .postForEntity("http://localhost:" + port + "/api/v1/employee",employee, String.class);
       Assertions.assertEquals(400,response.getStatusCode().value());
    }
 
@@ -160,7 +160,7 @@ public class EmployeeControllerTest {
       employee.setSurname("Петров");
       employee.setSnils("3333333333");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:" + port + "/employee", employee, String.class);
+              .postForEntity("http://localhost:" + port + "/api/v1/employee", employee, String.class);
       Assertions.assertEquals(400, response.getStatusCode().value());
    }
 
@@ -173,7 +173,7 @@ public class EmployeeControllerTest {
       employee.setPatronymic("Петрович");
       employee.setSurname("Петров");
       ResponseEntity<String> response = template.getRestTemplate()
-              .postForEntity("http://localhost:" + port + "/employee", employee, String.class);
+              .postForEntity("http://localhost:" + port + "/api/v1/employee", employee, String.class);
       Assertions.assertEquals(400, response.getStatusCode().value());
    }
 
@@ -188,7 +188,7 @@ public class EmployeeControllerTest {
       employee.setSurname("Иванов");
       employee.setSnils("11111111111");
       template.getRestTemplate()
-              .put("http://localhost:" + port + "/employee/1", employee);
+              .put("http://localhost:" + port + "/api/v1/employee/1", employee);
       Employee actualEmployee = storage.findById("1").orElseThrow();
       Assertions.assertEquals(expectedName, actualEmployee.getName());
    }
@@ -203,7 +203,7 @@ public class EmployeeControllerTest {
       employee.setPatronymic("Иванович");
       employee.setSurname("Павлов");
       employee.setSnils("77777777777");
-      template.getRestTemplate().put("http://localhost:" + port + "/employee/" + employeeId, employee);
+      template.getRestTemplate().put("http://localhost:" + port + "/api/v1/employee/" + employeeId, employee);
       Optional<Employee> employeeOpt = storage.findById(employeeId);
       Assertions.assertTrue(employeeOpt.isEmpty());
    }
@@ -217,7 +217,7 @@ public class EmployeeControllerTest {
       employee.setPatronymic("Иванович");
       employee.setSurname("Павлов");
       employee.setSnils("77777777777");
-      template.getRestTemplate().put("http://localhost:" + port + "/employee/" + urlId, employee);
+      template.getRestTemplate().put("http://localhost:" + port + "/api/v1/employee/" + urlId, employee);
       Optional<Employee> employeeOpt = storage.findById(urlId);
       Assertions.assertTrue(employeeOpt.isEmpty());
    }
@@ -232,7 +232,7 @@ public class EmployeeControllerTest {
       employee.setPatronymic("Иванович");
       employee.setSurname(updatedSurname);
       employee.setSnils("11111111111");
-      template.getRestTemplate().put("http://localhost:" + port + "/employee/" + employeeId, employee);
+      template.getRestTemplate().put("http://localhost:" + port + "/api/v1/employee/" + employeeId, employee);
       Employee actualEmployee = storage.findById(employeeId).orElseThrow();
       Assertions.assertEquals("Иванов",actualEmployee.getSurname());
    }
@@ -241,7 +241,7 @@ public class EmployeeControllerTest {
    @DisplayName("Test deleteEmployee success")
    void testDeleteEmployeeSuccess() {
       int firstSize = storage.findAll().size();
-      template.getRestTemplate().delete("http://localhost:" + port + "/employee/1");
+      template.getRestTemplate().delete("http://localhost:" + port + "/api/v1/employee/1");
       int secondSize = storage.findAll().size();
       Assertions.assertNotEquals(firstSize,secondSize);
    }
