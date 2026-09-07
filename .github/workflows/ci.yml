@@ -45,8 +45,8 @@ jobs:
     - name: Generate JaCoCo Coverage Report
       run: ./gradlew jacocoTestReport
 
-      # Шаг 3: Проверка покрытия (80% минимум)
-    - name: Verify Coverage (>= 80%)
+      # Шаг 3: Проверка покрытия (75% минимум)
+    - name: Verify Coverage (>= 75%)
       run: ./gradlew jacocoTestCoverageVerification
 
       # Шаг 4: Запуск анализа SonarQube
