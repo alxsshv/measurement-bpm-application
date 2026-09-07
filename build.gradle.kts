@@ -90,6 +90,7 @@ sonar {
     properties {
         property("sonar.projectKey", "alxsshv_measurement-bpm-application")
         property("sonar.projectName", "measurement-bpm-application")
+        property("sonar.organization", "alxsshv")
 
         // Пути к исходному коду и тестам
         property("sonar.sources", "src/main/java")

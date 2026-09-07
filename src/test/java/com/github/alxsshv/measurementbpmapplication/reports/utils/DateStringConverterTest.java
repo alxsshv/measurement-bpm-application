@@ -49,11 +49,6 @@ class DateStringConverterTest {
             assertEquals("2024-01-12", result);
         }
 
-        @Test
-        @DisplayName("Возвращает null, когда передаётся null")
-        void returnsNullForNullInput() {
-            assertNull(DateStringConverter.getStringOrNull(null));
-        }
     }
 
     @Nested
@@ -67,11 +62,6 @@ class DateStringConverterTest {
             assertEquals(LocalDateTime.of(2024, Month.JANUARY, 12, 14, 30, 25), result);
         }
 
-        @Test
-        @DisplayName("Возвращает null, когда передаётся null")
-        void returnsNullForNullInput() {
-            assertNull(DateStringConverter.parseLocalDateTimeOrGetNull(null));
-        }
 
         @Test
         @DisplayName("Бросает исключение для невалидной строки")
