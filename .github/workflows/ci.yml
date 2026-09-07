@@ -74,7 +74,7 @@ jobs:
       with:
         sonar_token: ${{ secrets.SONAR_TOKEN }}
         sonar_host_url: ${{ secrets.SONAR_HOST_URL }}  # Для self-hosted
-        sonar_projectkey: ${{ github.event.repository.name }}
+        sonar_projectkey: "alxsshv_measurement-bpm-application"
         github-token: ${{ secrets.GITHUB_TOKEN }}
         repo_name: ${{ github.repository }}
         pr_number: ${{ github.event.pull_request.number }}
