@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ConditionsFactoryTest {
 
@@ -35,9 +36,9 @@ class ConditionsFactoryTest {
 
             Conditions conditions = ConditionsFactory.createConditions(vrfRecord);
 
-            assertEquals(null, conditions.getTemperature());
-            assertEquals(null, conditions.getPressure());
-            assertEquals(null, conditions.getHumidity());
+            assertNull(conditions.getTemperature());
+            assertNull(conditions.getPressure());
+            assertNull(conditions.getHumidity());
         }
     }
 }
