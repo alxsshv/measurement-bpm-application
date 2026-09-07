@@ -15,8 +15,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -105,8 +104,8 @@ class ExcelFsaVerificationRecordParserTest {
 
             List<FsaVerificationRecord> records = parser.parse(List.of(object));
 
-            assertEquals(null, records.get(0).getDateVerification());
-            assertEquals(null, records.get(0).getDateEndVerification());
+            assertNull(records.get(0).getDateVerification());
+            assertNull(records.get(0).getDateEndVerification());
         }
 
         @Test
