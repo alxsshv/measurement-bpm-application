@@ -1,24 +1,33 @@
 name: Java CI with Gradle
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
+      - develop
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: read
+      pull-requests: write
+
+    env:
+      # Передаем наш PAT для скачивания пакета из GitHub Packages
+      PACKAGES_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+      GITHUB_ACTOR: ${{ github.actor }}
+
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
     
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
-        # Магическая строчка: включит кэширование зависимостей Gradle
+        # включит кэширование зависимостей Gradle
         cache: 'gradle' 
         
     - name: Setup Gradle
@@ -28,6 +37,45 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./gradlew
       
+      # Шаг 1: Сборка и тесты
     - name: Build and Test
-      run: ./gradlew build
-      # Команда 'build' в Gradle по умолчанию включает компиляцию и запуск тестов
+      run: ./gradlew test
+
+      # Шаг 2: Генерация отчёта JaCoCo
+    - name: Generate JaCoCo Coverage Report
+      run: ./gradlew jacocoTestReport
+
+      # Шаг 3: Проверка покрытия (80% минимум)
+    - name: Verify Coverage (>= 80%)
+      run: ./gradlew jacocoTestCoverageVerification
+
+      # Шаг 4: Запуск анализа SonarQube
+    - name: SonarQube Scan
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # Для SonarQube Cloud (бывший SonarCloud) не нужно указывать SONAR_HOST_URL
+        # SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}  # Раскомментировать для self-hosted
+      run: ./gradlew sonar --info
+
+      # Шаг 5: Проверка Quality Gate
+    - name: SonarQube Quality Gate Check
+      id: sonarqube-quality-gate-check
+      uses: sonarsource/sonarqube-quality-gate-action@v1
+      with:
+        pollingTimeoutSec: 600  # Ждём до 10 минут
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}  # Раскомментировать для self-hosted
+
+      # Шаг 6: Комментарий к Pull Request с результатами
+    - name: SonarQube Pull Request Comment
+      if: always()  # Выполнять даже при ошибке
+      uses: campos-pay/sonarqube-pr-comment@main
+      with:
+        sonar_token: ${{ secrets.SONAR_TOKEN }}
+        sonar_host_url: ${{ secrets.SONAR_HOST_URL }}  # Для self-hosted
+        sonar_projectkey: ${{ github.event.repository.name }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        repo_name: ${{ github.repository }}
+        pr_number: ${{ github.event.pull_request.number }}
+        github_api_base_url: ""  # Пусто для github.com
