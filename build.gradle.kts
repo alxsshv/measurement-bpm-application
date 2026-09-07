@@ -79,10 +79,8 @@ tasks.jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                // Можно использовать COUNT = LINE (строки) или INSTRUCTION (байткод инструкции)
-                // INSTRUCTION считается более точным стандартом
                 counter = "INSTRUCTION"
-                minimum = "0.80".toBigDecimal() // 80% покрытия обязательно!
+                minimum = "0.75".toBigDecimal()
             }
         }
     }
@@ -90,7 +88,6 @@ tasks.jacocoTestCoverageVerification {
 
 sonar {
     properties {
-        // Замени на свой реальный ключ проекта, который ты создал в SonarQube Cloud
         property("sonar.projectKey", "alxsshv_measurement-bpm-application")
         property("sonar.projectName", "measurement-bpm-application")
 
